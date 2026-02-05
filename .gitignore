@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+
+# Go binaries
+backend/server
+
+# IDE & tools
+.claude/
+.vscode/
+
+# OS
+.DS_Store
