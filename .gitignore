@@ -5,7 +5,8 @@ node_modules/
 dist/
 
 # Go binaries
-backend/server
+backend/server.exe
+backend/app
 
 # IDE & tools
 .claude/

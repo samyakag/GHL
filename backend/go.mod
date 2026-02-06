@@ -1,6 +1,6 @@
 module github.com/samyakxd/ghl/backend
 
-go 1.24
+go 1.24.0
 
 require (
 	connectrpc.com/connect v1.19.1
