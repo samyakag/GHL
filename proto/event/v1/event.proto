@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package event.v1;
+
+option go_package = "github.com/samyakxd/ghl/backend/gen/event/v1;eventv1";
+
+message Event {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string date = 4;            // calendar date, e.g. "2026-03-15"
+  int32 capacity = 5;         // max capacity, immutable after creation
+  int32 registered_count = 6; // current number of registrations
+}
+
+message Registration {
+  string id = 1;
+  string event_id = 2;
+  string name = 3;
+  string email = 4;
+}
+
+// --- Event RPCs ---
+
+message CreateEventRequest {
+  string title = 1;
+  string description = 2;
+  string date = 3;
+  int32 capacity = 4;
+}
+
+message CreateEventResponse {
+  Event event = 1;
+}
+
+message ListEventsRequest {}
+
+message ListEventsResponse {
+  repeated Event events = 1;
+}
+
+// --- Registration RPCs ---
+
+message RegisterForEventRequest {
+  string event_id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message RegisterForEventResponse {
+  Registration registration = 1;
+}
+
+message GetEventRegistrationsRequest {
+  string event_id = 1;
+}
+
+message GetEventRegistrationsResponse {
+  repeated Registration registrations = 1;
+}
+
+service EventService {
+  rpc CreateEvent(CreateEventRequest) returns (CreateEventResponse);
+  rpc ListEvents(ListEventsRequest) returns (ListEventsResponse);
+  rpc RegisterForEvent(RegisterForEventRequest) returns (RegisterForEventResponse);
+  rpc GetEventRegistrations(GetEventRegistrationsRequest) returns (GetEventRegistrationsResponse);
+}

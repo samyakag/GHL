@@ -98,3 +98,165 @@ h1 {
   text-align: center;
   color: #999;
 }
+
+/* --- Tabs --- */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: #eee;
+  color: #555;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #42b883;
+  color: white;
+}
+
+/* --- Event form --- */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.event-form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.event-form-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.event-form-row button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: #42b883;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.event-form-row button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* --- Event list --- */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.event-card {
+  background: #f9f9f9;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.event-info h3 {
+  margin: 0 0 0.25rem;
+  color: #333;
+}
+
+.event-description {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.event-date {
+  margin: 0.25rem 0 0;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.capacity-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #e6f4ee;
+  color: #2e7d52;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.capacity-badge.sold-out {
+  background: #fee;
+  color: #c00;
+}
+
+/* --- Register button & form --- */
+.register-btn {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  background: #42b883;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.register-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.register-form input {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.register-form button {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  background: #42b883;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

@@ -11,7 +11,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN go mod tidy && CGO_ENABLED=0 GOOS=linux go build -o server .
+RUN go mod tidy && CGO_ENABLED=0 GOOS=linux go build -o app .
 
 # Runtime stage
 FROM alpine:3.19
@@ -19,10 +19,10 @@ FROM alpine:3.19
 WORKDIR /app
 
 # Copy binary from builder
-COPY --from=builder /app/server .
+COPY --from=builder /app/app .
 
 # Expose port
 EXPOSE 8080
 
 # Run the application
-CMD ["./server"]
+CMD ["./app"]
